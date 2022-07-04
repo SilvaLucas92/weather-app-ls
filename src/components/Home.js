@@ -8,7 +8,7 @@ const Home = () => {
     const [query, setQuery] = useState('');
     const [apiResponse, setApiResponse] = useState([]);
     const apiCall = () => {
-        fetch(`http://api.weatherapi.com/v1/current.json?key=38d8acf92d4b49bf87e133351220407&q=${query}`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=38d8acf92d4b49bf87e133351220407&q=${query}`)
             .then(response => response.json())
             .then(data => {
                 setApiResponse(data)    
@@ -31,10 +31,11 @@ const Home = () => {
         <Heading
         as='h1' 
         size='3xl' 
-        my='30px' 
+        mb='60px'
         textAlign='center' 
         py='25px'
         color='#232323'
+        opacity='0.9'
         >The Weather App</Heading>
         <InputSearch 
         setQuery={ setQuery }

@@ -24,7 +24,7 @@ const City = ({ apiResponse }) => {
             my={10}
             boxShadow='xl'
             rounded='md'
-            w={['250px', '280px', '300px', '350px']}
+            w={['90%', '300px', '320px', '350px']}
             mx='auto'
             >
                 <Flex

@@ -17,6 +17,7 @@ const InputSearch = ({ setQuery }) => {
                 <HStack
                 mx='auto'
                 w={['90%', '80%', '60%', '50%']}
+                my='10px'
                 >
                     
                         <Input
