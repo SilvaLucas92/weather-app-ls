@@ -28,9 +28,9 @@ const InputSearch = ({ setQuery }) => {
                         h='50px'
                         />
                         <Button
-                        colorScheme='green'
                         type='submit'
                         h='50px'
+                        variant='filled'
                         >submit</Button>
                 </HStack>
             </form>
