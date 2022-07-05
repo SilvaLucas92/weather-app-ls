@@ -9,7 +9,6 @@ const Footer = () => {
     alignItems='center'
     w='100%'
     m='5px'
-    position='fixed'
     bottom='0'
     >
         <Text
