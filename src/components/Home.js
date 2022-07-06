@@ -9,16 +9,30 @@ const Home = () => {
     const [apiResponse, setApiResponse] = useState([]);
     const apiCall = () => {
         fetch(`https://api.weatherapi.com/v1/current.json?key=38d8acf92d4b49bf87e133351220407&q=${query}`)
-            .then(response => response.json())
+            .then(response => {
+                return (
+                response.json()
+                )
+            } )
             .then(data => {
                 setApiResponse(data)
+                setError(true)
                 })
+            .catch((err) => {
+                console.log(err)
+            })    
+    }
+    const handleReset = () => {
+        setError(false);
+        setApiResponse([])
     }
     useEffect(() => {
         if(query) {
-            return apiCall();
+            apiCall()
         }
     }, [query]);
+
+    console.log(apiResponse)
 
   return (
     <Flex
@@ -41,8 +55,8 @@ const Home = () => {
         w='100%'
         mx='auto'
         />
-        <City apiResponse={apiResponse} error={error} />
-        <Button colorScheme='red' mx='auto' w={{base:'60px', md:'80px'}} h='50px' onClick={() => setApiResponse([])}>Clear</Button>
+        {error && <City apiResponse={apiResponse} error={error} />}
+        <Button mt={!error? '100px' : '30px'} colorScheme='red' mx='auto' w={{base:'60px', md:'80px'}} h='50px' onClick={handleReset}>Clear</Button>
     </Flex> 
   )
 }

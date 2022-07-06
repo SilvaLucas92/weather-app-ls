@@ -27,11 +27,11 @@ const InputSearch = ({ setQuery }) => {
                         variant='filled'
                         h='50px'
                         />
-                        <Button
+                        {/* <Button
                         type='submit'
                         h='50px'
                         variant='filled'
-                        >submit</Button>
+                        >submit</Button> */}
                 </HStack>
             </form>
   )

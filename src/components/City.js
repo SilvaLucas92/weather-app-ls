@@ -1,31 +1,21 @@
 import { Heading, Box, Text, Image, Flex } from '@chakra-ui/react'
 import React from 'react'
 
-const City = ({ apiResponse, error }) => {
+const City = ({ apiResponse }) => {
     const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    if(error) {
-        <Box
-        w='100%'
-        my={20}
-        >
-            <Heading textAlign='center' mx='auto' w='100%' opacity='0.8'>
-                No city Found
-            </Heading>
-        </Box>
-    }
-    if(apiResponse.length === 0) {
+    if(apiResponse.length === 0 || apiResponse.error) {
         return(
             <Box
             w='100%'
             my={20}
             >
                 <Heading textAlign='center' mx='auto' w='100%' opacity='0.8'>
-                    No city
+                    No city Found
                 </Heading>
             </Box>
         )
     }
-    if(apiResponse) {
+    if(!apiResponse.error) {
         return (
             <Box
             align='center'
@@ -56,6 +46,7 @@ const City = ({ apiResponse, error }) => {
             </Box>
           )
     }
+
 }
 
 export default City
